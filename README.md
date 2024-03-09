@@ -8,3 +8,4 @@ Interview Codes
 5) Move Zeroes to the end of array
 6) Merge String Alternatively
 7) Is Subsequence
+8) Greatest Common Divisor of Strings
