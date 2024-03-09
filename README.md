@@ -9,3 +9,4 @@ Interview Codes
 6) Merge String Alternatively
 7) Is Subsequence
 8) Greatest Common Divisor of Strings
+9) Kids With the Greatest Number of Candies
