@@ -1,0 +1,148 @@
+Q)
+2. Add Two Numbers
+Medium
+Topics
+Companies
+You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+Example 1:
+Input: l1 = [2,4,3], l2 = [5,6,4]
+Output: [7,0,8]
+Explanation: 342 + 465 = 807.
+Example 2:
+Input: l1 = [0], l2 = [0]
+Output: [0]
+Example 3:
+Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+Output: [8,9,9,9,0,0,0,1]
+Constraints:
+The number of nodes in each linked list is in the range [1, 100].
+0 <= Node.val <= 9
+It is guaranteed that the list represents a number that does not have leading zeros
+____________________________________________________________
+package abcd;
+import java.util.Scanner;
+
+class Node {
+	int data;
+	Node next;
+
+	Node(int data) {
+		this.data = data;
+		this.next = null;
+	}
+}
+
+public class Solution {
+	Node root, root1, root2;
+
+	void createList() {
+		root = null;
+		root1 = null;
+		root2 = null;
+	}
+
+	void insertLeft(int data) {
+		Node n = new Node(data);
+		if (root == null) {
+			root = n;
+			System.out.print("list1->"+n.data);
+		} else {
+			n.next = root;//
+			root = n;
+			System.out.print("->"+n.data);
+		}
+	}
+
+	void insertLeft1(int data) {
+		Node n = new Node(data);
+		if (root1 == null) {
+			root1 = n;
+			System.out.print("list ->"+n.data);
+		} else {
+			n.next = root1;
+			root1 = n;
+			System.out.print("->"+n.data);
+		}
+	}
+
+
+	void additionList() {
+    int num = 0, carry = 0;
+    Node t = root;
+    Node t1 = root1;
+    while (t != null || t1 != null || carry != 0)
+    {
+        num = carry;
+        if (t != null)
+        {
+            num += t.data;
+            t = t.next;
+        }
+        if (t1 != null)
+        {
+            num += t1.data;
+            t1 = t1.next;
+        }
+        carry = num / 10;
+        insertRight(num % 10);
+    }
+}
+
+	void insertRight(int data) {
+		Node n = new Node(data);
+		if (root2 == null) {
+			root2 = n;//7 
+			System.out.println("inserted"+n.data);
+		} else {
+			Node t = root2;
+			while (t.next != null)
+			t = t.next;
+			t.next = n;
+			System.out.println("inserted "+t.data);//0
+		}
+	}
+
+	void printResult() {
+		Node t = root2;
+		while (t != null) {
+			System.out.print(t.data + " ");
+			t = t.next;
+		}
+	}
+
+	public static void main(String args[]) {
+		int choice;
+		Solution sol = new Solution();
+		Scanner sc = new Scanner(System.in);
+		sol.createList();
+		do {
+			System.out.println(
+					"\n 0. Exit \n 1. Insert into first linked list \n 2. Insert into second linked list\n 3. Print result of addition of two linked lists");
+			choice = sc.nextInt();
+			switch (choice) {
+			case 1:
+				System.out.println("Enter the element in first linked list ");
+				int n = sc.nextInt();
+				sol.insertLeft(n);//243
+				break;
+			case 2:
+				System.out.println("Enter the element in second linked list ");
+				n = sc.nextInt();
+				sol.insertLeft1(n);//564
+				break;
+			case 3:
+				System.out.println("Result of addition");
+				sol.additionList();
+				sol.printResult();
+				break;
+			case 0:
+				System.out.println("Exiting");
+				break;
+			default:
+				System.out.println("Invalid choice");
+				break;
+			}
+		} while (choice != 0);
+	}
+}
