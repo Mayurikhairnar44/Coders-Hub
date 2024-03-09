@@ -14,3 +14,4 @@ Interview Codes
 11) Max Number of K-Sum Pairs
 12) Can Place Flowers
 13) Median of the sorted and merged array
+14) Maximum Average Subarray I
