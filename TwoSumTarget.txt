@@ -18,37 +18,41 @@ Constraints:
 Only one valid answer exists.
 ______________________________________________________________________________________________________________________________
 import java.util.*;
-	class SumTarget {
-	    public int[] twoSum(int[] nums, int target) {
-	    int ans[]=new int[2];
-	    	for(int i=0;i<nums.length;i++)
-	    {
-	        for(int j=i+1;j<nums.length;j++)
-	        {
-	            if(nums[i]+nums[j]==target)
-	            {
-	             ans[0]=i;
-	             ans[1]=j;
-	            	nums[i]=0;
-	                nums[j]=0;
-	            }
-	        }
-	      }
-	    	return ans;
-	    }
-	    public static void main(String args[])
-	    {
-	        Scanner sc=new Scanner(System.in);
-//          System.out.println("Enter the number of elements in an array");
-	        int k=sc.nextInt();
-	        int nums[]=new int[k];
-//	        System.out.println("Enter the elements in an array");
-	        for(int i=0;i<k;i++)
-	          nums[i]=sc.nextInt();
-//	        System.out.println("enter the target value");
-	        int target=sc.nextInt();
-	     SumTarget  sol=new SumTarget();
-	        int ans[]=sol.twoSum(nums,target);
-	        System.out.println("[ "+ans[0]+" , "+ans[1]+" ]");
-	    }
-	}
+class SumTarget {
+    public int[] twoSum(int[] nums, int target) {
+    int ans[]=new int[2];
+    	for(int i=0;i<nums.length;i++)
+    {
+        for(int j=0;j<nums.length;j++)
+        {
+            if(nums[i]+nums[j]==target && nums[i]==nums[j]&& i<j)
+            {
+             ans[0]=i;
+             ans[1]=j;
+            }
+            if(nums[i]+nums[j]== target && nums[i]!=nums[j])
+            {
+             ans[0]=i;
+             ans[1]=j;
+
+            }
+        }
+      }
+    	return ans;
+    }
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+     System.out.println("Enter the number of elements in an array");
+        int k=sc.nextInt();
+        int nums[]=new int[k];
+        System.out.println("Enter the elements in an array");
+        for(int i=0;i<k;i++)
+          nums[i]=sc.nextInt();
+        System.out.println("enter the target value");
+        int target=sc.nextInt();
+        SumTarget sol=new SumTarget();
+        int ans[]=sol.twoSum(nums,target);
+        System.out.println("[ "+ans[0]+" , "+ans[1]+" ]");
+    }
+}
