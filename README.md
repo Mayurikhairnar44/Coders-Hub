@@ -21,3 +21,4 @@ Interview Codes
 18) Container With most Water
 19) Max Consecutive Ones III
 20) String to integer
+21) Find the median of given elements
