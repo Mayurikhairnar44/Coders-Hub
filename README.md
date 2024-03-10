@@ -20,3 +20,4 @@ Interview Codes
 17) Reverse Vowels of a String
 18) Container With most Water
 19) Max Consecutive Ones III
+20) String to integer
