@@ -1,0 +1,32 @@
+public class Main {
+    public static double findMaxAverage(int[] nums, int k) {
+        int sum = 0;
+
+        // Calculate the sum of the first k elements
+        for (int i = 0; i < k; i++) {
+            sum += nums[i];
+              
+        }
+
+        int maxSum = sum;//2
+        
+
+        // Slide the window through the array to find the maximum sum
+        for (int i = k; i < nums.length; i++) {
+            sum = sum - nums[i - k] + nums[i];//51 42
+            maxSum = Math.max(maxSum, sum);//51 51
+        }
+    
+        // Calculate the maximum average
+        double maxAverage = (double) maxSum / k;//51/4=12.75
+
+        return maxAverage;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1,12,-5,-6,50,3};
+        int k = 4;
+        double result = findMaxAverage(nums, k);
+        System.out.println("Maximum Average: " + result);
+    }
+}
