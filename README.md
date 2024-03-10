@@ -22,3 +22,4 @@ Interview Codes
 19) Max Consecutive Ones III
 20) String to integer
 21) Find the median of given elements
+22) REVERSE integer
