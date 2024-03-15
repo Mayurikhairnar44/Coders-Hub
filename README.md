@@ -24,4 +24,5 @@ Interview Codes
 21) Find the median of given elements
 22) REVERSE integer
 23) Longest substring wihtout repeating a character
+24) Zigzag conversion
 
