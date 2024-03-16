@@ -27,3 +27,4 @@ Interview Codes
 24) Zigzag conversion
 25) GradingStudent
 26) CountAppleAndOrrange
+27) Number Line Jumps
