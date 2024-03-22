@@ -23,3 +23,8 @@ Interview Codes
 20) String to integer
 21) Find the median of given elements
 22) REVERSE integer
+23) Longest substring wihtout repeating a character
+24) Zigzag conversion
+25) GradingStudent
+26) CountAppleAndOrrange
+27) Number Line Jumps
