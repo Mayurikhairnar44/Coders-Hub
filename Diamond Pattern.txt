@@ -1,0 +1,62 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    int i,j,k=0;
+		Scanner sc=new Scanner(System.in);
+// 		System.out.println("Enter a number of columns:");
+// 		int col=sc.nextInt();
+		int mid=10/2;
+		
+		for(i=0;i<5;i++)
+		{
+			for(j=0;j<=10-k;j++)
+			{
+				if(j==mid)
+				{
+					for(k=0;k<(i*2)+1;k++)
+					{
+						System.out.print(" ");
+						//continue;
+					}
+					
+				}
+				System.out.print("*");
+			}
+			mid--;
+			System.out.println();
+		}
+		
+		mid=5;
+	    int ir=4;
+	    //int m=0;
+		for(i=0;i<5;i++)
+		{
+		    
+		    int left=mid-ir;
+		    int right=mid+ir;
+		    int m=left-1;
+			for(j=0;j<=(10-right)+m;j++)
+			{
+				if(j==left)
+				{
+					for(k=left;k<=right;k++)
+					{
+						System.out.print(" ");
+						//continue;
+					}
+					
+				}
+				System.out.print("*");
+			}
+			//mid=mid-2;
+		    ir--;
+		    
+			System.out.println();
+		}
+		//m=m+1;
+			
+	}
+}
+
