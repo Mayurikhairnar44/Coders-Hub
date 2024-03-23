@@ -1,0 +1,43 @@
+Q) input: 123
+   Output: ABC, LC, AW
+   Here A-1,B-2,C-3,........Z-26
+--------------------------------------------------------------------------------------------------------------
+import java.util.HashMap;
+
+public class NumberToLetters {
+    // Method to print all possible strings for a given number
+    public static void printStrings(String number, String result, HashMap<Integer, Character> map) {
+        // Base case: If the input number is empty, print the result
+    	//System.out.println(map);
+        if (number.length() == 0) {
+            System.out.println(result);
+            return;
+        }
+        
+        // Take one or two digits from the beginning of the number
+        int firstDigit = Character.getNumericValue(number.charAt(0));
+        printStrings(number.substring(1), result + map.get(firstDigit), map);
+        
+        if (number.length() >= 2) {
+            int twoDigits = Integer.parseInt(number.substring(0, 2));
+            if (twoDigits <= 26) {
+                printStrings(number.substring(2), result + map.get(twoDigits), map);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        // Given hashmap mapping numbers to letters
+        HashMap<Integer, Character> map = new HashMap<>();
+        for (int i = 1; i <= 26; i++) {
+            map.put(i, (char) ('A' + i - 1));
+        }
+        
+        //System.out.println(map);
+        
+        String number = "123";
+        System.out.println("Possible strings for number " + number + ":");
+        printStrings(number, "", map);
+    }
+}
+
