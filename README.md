@@ -30,3 +30,4 @@ Interview Codes
 27) Number Line Jumps
 28) Grid Challenge
 29) Recursive Digit Sum.
+30) Diamond Pattern
