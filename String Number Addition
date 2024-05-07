@@ -1,0 +1,27 @@
+input ="1absc23"
+output= 24
+
+input="abdc4bsgdh"
+output=4
+========================================================================
+public class Main {
+    public static void main(String[] args) {
+        String str = "abcafsc4kmkjh";
+        int sum = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (Character.isDigit(ch)) {
+                int digitValue = Character.getNumericValue(ch);
+                if (i + 1 < str.length() && Character.isDigit(str.charAt(i + 1))) {
+                    int nextDigitValue = Character.getNumericValue(str.charAt(i + 1));
+                    int twoDigitNumber = digitValue * 10 + nextDigitValue;
+                    sum += twoDigitNumber;
+                    i++; 
+                } else {
+                    sum += digitValue;
+                }
+            }
+        }
+        System.out.println(sum);
+    }
+}
